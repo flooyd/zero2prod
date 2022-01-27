@@ -25,6 +25,22 @@ pub async fn subscribe(form: web::Form<FormData>, pool: web::Data<PgPool>) -> Ht
     }
 }
 
+// pub async fn get_users(pool: web::Data<PgPool>) -> HttpResponse {
+//     HttpResponse::Ok().finish()
+// }
+//
+// pub async fn select_users(pool: &PgPool) {
+//     let rows = sqlx::query!(
+//         r#"
+//         SELECT * FROM subscriptions
+//         "#
+//     )
+//         .fetch_optional(pool)
+//         .await;
+//
+//     println!("{:?}", rows);
+// }
+
 #[tracing::instrument(
 name = "Saving new subscriber details in the database",
 skip(form, pool)
